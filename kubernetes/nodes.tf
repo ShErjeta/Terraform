@@ -1,5 +1,5 @@
 resource "aws_key_pair" "sshkey" {
-  public_key = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+oNU3QwefZjxlURH/l/vjb/w+6lNiHcZ5x7aFzFUxjerjnKejAlTciizbDGX0aPAngBMsImHYWmEe+bqKxVOn7MqsHwLoxGPo1qYOpNW87LRy7myVESz7q27MLetymGsAsk1DjO1PkEdp7k199Aj9ClJwoRyXW8k0RmZIfr4gZjngN90SBVDp/DbJVmJWSE189+Pw0DxyKYOhI863ehQIMiTzzVvrjIkBCvZ/UOpe4wWiRC5LGh5UQOVuFl8oVwe/Hn7PdcM+cozHKUJFayKeIobb/oTr1W+W0ssvUHGHtypXC3bWLUWSD+gH6WGLKPmntFePibmwG3aMFv8+JM6mKLbsDBP4FeHx6wB8EARwxEoC3aPIREz61LXraQ3s0BNPGWF7nUPcveUvbzdURDxM9RaizKLKGLwl2sXxUY4dSfeW3B1Fi/iZbiF3j/fVdQ4iyaCxi3tKiIrkUhtb27IDLy30hwsmF/N3L857MBgc2mtMDnUEmjSTSNLlLPIOw9U= root@ip-172-31-45-235
+  public_key = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFDiGCEBDzvQbw3NxanZ48dBvzp1SpGmQAx4dhPnSRis shkodraerjeta@gmail.com
   key_name   = "mysshkey"
 }
 data "aws_ami" "ubuntu" {
