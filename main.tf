@@ -20,5 +20,6 @@ module "kubernetes" {
   region = "eu-central-1"
   vpc_cidr_block = "10.240.0.0/16"
   worker_instance_type = "t3.medium"
+ 
   vpc_name = "kubernetes"
 } 
