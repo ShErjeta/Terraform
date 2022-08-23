@@ -3,7 +3,7 @@ provider "aws" {
 }
 terraform {
    backend "s3" {
-    bucket = "skyvalley-terraform-state"
+    bucket = "skyvalley-terraform"
     key    = "default.tfstate"
     region = "eu-central-1"
   }
