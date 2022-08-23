@@ -13,7 +13,7 @@ data "aws_ami" "ubuntu" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-  owners = ["133241726574"] # Canonical
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_instance" "bastion" {
