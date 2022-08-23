@@ -87,7 +87,7 @@ resource "aws_autoscaling_group" "master-k8s-local-01" {
   max_size             = 1
   min_size             = 1
   vpc_zone_identifier  = [aws_subnet.private01.id]
-  target_group_arns    = [aws_lb_target_group.control-plane.arn]
+  load_balancers       = [aws_elb.api-k8s-local.id]
 
   tags = [{
     key                 = "KubernetesCluster"
