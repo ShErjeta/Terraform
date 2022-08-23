@@ -90,7 +90,6 @@ resource "aws_security_group_rule" "traffic_from_lb" {
   protocol          = "TCP"
   security_group_id = aws_security_group.k8s_master_nodes.id
   source_security_group_id = aws_security_group.api-elb-k8s-local.id
-  cidr_blocks       = ["0.0.0.0/0"]
 }
 resource "aws_security_group_rule" "traffic_from_workers_to_masters" {
   type                     = "ingress"
