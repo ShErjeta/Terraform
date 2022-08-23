@@ -3,23 +3,23 @@ resource "aws_key_pair" "sshkey" {
 
   key_name   = "mysshkey"
 }
+
 data "aws_ami" "ubuntu" {
+  owners = ["133241726574"] # Canonical
   most_recent = true
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20220609"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
   }
 
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-  owners = ["133241726574"] # Canonical
 }
 
 resource "aws_instance" "bastion" {
-  ami                    = "ami-065deacbcaac64cf2"
- 
+  ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t3.small"
   vpc_security_group_ids = [aws_security_group.bastion_node.id]
   key_name               = aws_key_pair.sshkey.key_name
