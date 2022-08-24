@@ -23,7 +23,7 @@ resource "aws_instance" "bastion" {
   key_name               = aws_key_pair.sshkey.key_name
   subnet_id              = aws_subnet.utility.id
   root_block_device {
-    volume_size = 20
+    volume_size = 10
   }
   tags = {
     Name = "bastion.${var.cluster_name}"
@@ -76,7 +76,7 @@ EOT
   }
   root_block_device {
     volume_type           = "gp2"
-    volume_size           = 20
+    volume_size           = 10
     delete_on_termination = true
   }
 }
@@ -129,7 +129,7 @@ EOT
   }
   root_block_device {
     volume_type           = "gp2"
-    volume_size           = 20
+    volume_size           = 10
     delete_on_termination = true
   }
 }
